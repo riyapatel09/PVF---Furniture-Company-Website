@@ -1,0 +1,33 @@
+﻿@model IEnumerable<S2G5_PVFAPP.Models.ProductLine>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductLineName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductLineName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductLineId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductLineId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductLineId })
+        </td>
+    </tr>
+}
+
+</table>
